@@ -1010,11 +1010,11 @@ button { font: inherit; color: inherit; }
       key: 'after', label: 'Para terminar', emoji: '🌙',
       kicker: 'Paso 3 de 3', title: '¿Y para terminar?', hint: 'La guinda de la noche.',
       options: [
-        { t: 'Chocolate con churros en San Ginés', d: 'Abierta desde 1894. El final más dulce, y el más madrileño.', tag: '€' },
-        { t: 'Una copa en la Azotea del Círculo', d: 'Madrid entero a nuestros pies, desde una de las mejores vistas de la ciudad.', tag: '€€' },
+        { t: 'Chocolate con churros en San Ginés', d: 'Abierta desde 1894. Bueno, tú sin chocolate, que sé que no te gusta: churros para ti y el chocolate para mí.', tag: '€' },
+        { t: 'Naturaleza Encendida', d: 'Un jardín entero iluminado de noche, este año de Alicia en el País de las Maravillas. Solo está hasta el 10 de enero.', tag: '€' },
         { t: 'Paseo de noche por el Madrid de los Austrias', d: 'Sin prisa, de la mano, perdiéndonos por las callejuelas.', tag: 'Gratis' },
         { t: 'Karaoke en sala privada', d: 'Te dedico una canción. Vas a sentirla, en todos los sentidos.', tag: '€' },
-        { t: 'Peli y manta', d: 'El plan más infravalorado del mundo. Eliges tú la peli.', tag: 'Gratis' },
+        { t: 'Peli y manta', d: 'El plan más infravalorado del mundo. Eliges tú la peli. Y lo que surja…', tag: 'Gratis' },
       ],
       surprise: { t: 'Sorpresa', d: 'Lo sabrás cuando llegue el momento.', tag: 'Misterio' },
     },
@@ -1054,7 +1054,9 @@ button { font: inherit; color: inherit; }
   const fmt = n => n.toLocaleString('de-DE'); // 2.171 (con punto, como se escribe en España)
   const smooth = reduce ? 'auto' : 'smooth';
 
-  const KEY = 'seis-meses-v1';
+  // Cambiar la versión reinicia la web en todos los móviles que ya la abrieron
+  const KEY = 'seis-meses-v2';
+  try { localStorage.removeItem('seis-meses-v1'); } catch (_) { /* sin almacenamiento */ }
   const store = {
     get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (_) { return {}; } },
     set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (_) { /* sin almacenamiento */ } },
