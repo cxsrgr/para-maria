@@ -1,0 +1,1676 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seis meses contigo</title>
+<meta name="description" content="Tengo algo para ti.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F8E1E6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-1.15%20-1.2%202.3%202.3%22%3E%3Cpath%20fill%3D%22%238A1C3C%22%20d%3D%22M0%20.78C-.36%20.5-1%20.08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86%200-.66.05-.86.2-1%20.44-1%20.74-1%201-.74%201-.38%201%20.08.36.5%200%20.78Z%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tengo algo para ti">
+<meta property="og:description" content="Ábrelo cuando tengas un momento tranquilo.">
+<meta property="og:image" content="https://cxsrgr.github.io/para-maria/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://cxsrgr.github.io/para-maria/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Ms+Madi&display=swap">
+<style>
+/* Layout: una sola columna estrecha, como una carta por avión que se va desplegando:
+   sobre → carta → distancia → pregunta → plan → tarjeta de embarque. Un solo tema (claro), elegido a propósito. */
+:root {
+  --pink: #F8E1E6;        /* fondo */
+  --pink-soft: #FCEEF1;   /* opciones */
+  --paper: #FFF8F9;       /* papel */
+  --blush: #F1BFCB;
+  --rose: #E07D97;        /* corazones, rayas */
+  --wine: #8A1C3C;        /* tinta de acento */
+  --ink: #3A0F1E;         /* texto */
+  --ink-2: #7A4656;       /* texto secundario */
+  --line: rgba(138, 28, 60, .16);
+  --line-strong: rgba(138, 28, 60, .34);
+  --shade: rgba(58, 15, 30, .16);
+  --wine-shadow: rgba(138, 28, 60, .5);
+  --glow: rgba(241, 191, 203, .55);
+  --env-1: #F4CBD5;
+  --env-2: #EDB6C3;
+  --env-3: #E2A0B1;
+  --wax-hi: #B8405F;
+  --wax: #8A1C3C;
+  --wax-lo: #5A0D24;
+  --clear: rgba(255, 248, 249, 0);
+  --vinyl: #24070F;
+  --groove: rgba(255, 248, 249, .08);
+  --undev: #3B2A26;
+
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --script: "Ms Madi", "Segoe Script", "Apple Chancery", cursive;
+  --mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --ease: cubic-bezier(.2, .75, .2, 1);
+  --airmail: repeating-linear-gradient(-45deg, var(--rose) 0 9px, var(--paper) 9px 14px, var(--wine) 14px 23px, var(--paper) 23px 28px);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--pink);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.6;
+  font-variation-settings: "SOFT" 100;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+body.is-locked { overflow: hidden; }
+[hidden] { display: none !important; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.mono { font-family: var(--mono); }
+.script { font-family: var(--script); font-weight: 400; font-style: normal; line-height: 1; }
+.label {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.4;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.title {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(34px, 8.8vw, 50px);
+  line-height: 1.05;
+  letter-spacing: -.018em;
+  text-wrap: balance;
+}
+.title em, .intro-title em, .final-title em { font-style: italic; color: var(--wine); font-variation-settings: "SOFT" 100, "WONK" 1; }
+.sub { margin: 0; max-width: 36ch; color: var(--ink-2); text-wrap: pretty; }
+
+/* ---------- Ambiente ---------- */
+.atmo {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(120% 60% at 50% -8%, var(--paper) 0%, var(--clear) 62%),
+    radial-gradient(80% 55% at 100% 100%, var(--glow) 0%, var(--clear) 70%);
+}
+.atmo::after {
+  content: ""; position: absolute; inset: 0; opacity: .07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .23 0 0 0 0 .06 0 0 0 0 .12 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hearts-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.hearts-bg svg {
+  position: absolute; bottom: -40px; left: var(--x);
+  width: var(--s); height: var(--s); opacity: 0;
+  animation: float var(--d) linear var(--delay) infinite;
+}
+.hearts-bg path { fill: var(--rose); }
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  12% { opacity: var(--o); }
+  50% { transform: translate(var(--sway), -55vh) rotate(12deg); }
+  88% { opacity: var(--o); }
+  100% { transform: translate(0, -118vh) rotate(-8deg); opacity: 0; }
+}
+.fx { position: fixed; inset: 0; z-index: 80; pointer-events: none; }
+
+/* ---------- Sobre (intro) ---------- */
+.intro { display: none; }
+.js .intro {
+  position: fixed; inset: 0; z-index: 50;
+  display: grid; place-items: center;
+  background: var(--pink);
+  padding: max(28px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(28px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  overflow: hidden auto;
+  transition: opacity .9s var(--ease), visibility .9s;
+}
+.intro::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(70% 50% at 50% 45%, var(--paper) 0%, var(--clear) 70%);
+}
+.intro.is-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+.intro-inner {
+  position: relative;
+  width: 100%; max-width: 420px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  text-align: center;
+}
+.intro-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(36px, 10vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+}
+.intro-title em { display: block; }
+.intro .label, .intro-title, .intro-hint { transition: opacity .4s ease; }
+.intro.is-opening .label, .intro.is-opening .intro-title, .intro.is-opening .intro-hint { opacity: 0; }
+.intro-hint {
+  margin: 4px 0 0;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-2);
+  animation: nudge 2.4s ease-in-out infinite;
+}
+@keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+.envelope {
+  position: relative;
+  width: min(100%, 340px); max-width: 100%;
+  aspect-ratio: 1.5;
+  margin: 30px auto 22px;
+  perspective: 900px;
+  cursor: pointer;
+  filter: drop-shadow(0 22px 24px var(--shade));
+  -webkit-tap-highlight-color: transparent;
+}
+.envelope > * { position: absolute; }
+.env-back { inset: 0; background: var(--env-3); }
+.env-letter {
+  left: 7%; right: 7%; top: 6%; height: 88%;
+  z-index: 2;
+  background: var(--paper);
+  box-shadow: 0 1px 2px var(--shade);
+  display: flex; justify-content: center;
+  padding-top: 9%;
+  transition: transform 1.1s var(--ease);
+}
+.env-letter .script { font-size: clamp(30px, 9vw, 40px); color: var(--wine); }
+.env-left { inset: 0; z-index: 3; background: var(--env-1); clip-path: polygon(0 0, 51% 55%, 0 100%); }
+.env-right { inset: 0; z-index: 3; background: var(--env-1); clip-path: polygon(100% 0, 49% 55%, 100% 100%); }
+.env-bottom { inset: 0; z-index: 4; background: var(--env-2); clip-path: polygon(0 100%, 50% 47%, 100% 100%); }
+.env-flap {
+  left: 0; right: 0; top: 0; height: 58%;
+  z-index: 5;
+  background: var(--env-2);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: 50% 0;
+  transition: transform .75s cubic-bezier(.5, 0, .3, 1);
+}
+.env-edge {
+  inset: 0; z-index: 6; pointer-events: none;
+  border: 7px solid transparent;
+  border-image: var(--airmail) 7;
+  transition: opacity .3s;
+}
+.env-address {
+  left: 8%; bottom: 7%; z-index: 7;
+  margin: 0;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  transform: rotate(-3deg);
+  transition: opacity .3s;
+}
+.env-address .script { font-size: clamp(22px, 6.8vw, 27px); color: var(--ink); }
+.env-address .mono { font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); }
+.stamp {
+  right: 7%; bottom: 11%; z-index: 7;
+  width: 48px; height: 64px;
+  transform: rotate(5deg);
+  background: radial-gradient(circle at center, var(--clear) 1.9px, var(--paper) 2.4px) -4px -4px / 8px 8px;
+  filter: drop-shadow(0 1px 1px var(--shade));
+  transition: opacity .3s;
+}
+.stamp-in {
+  position: absolute; inset: 4px;
+  background: var(--blush);
+  border: 1px solid var(--line-strong);
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  padding: 3px 2px 4px;
+}
+.stamp-val { align-self: flex-start; padding-left: 2px; font-size: 12px; line-height: 1; color: var(--wine); font-weight: 600; }
+.stamp-heart { width: 20px; height: 20px; }
+.stamp-heart path { fill: var(--wine); }
+.stamp-country { font-family: var(--mono); font-size: 6.5px; letter-spacing: .12em; color: var(--wine); }
+.postmark {
+  right: calc(7% + 20px); bottom: 10%; z-index: 8;
+  width: 92px; height: 54px;
+  transform: rotate(-12deg);
+  opacity: .55;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.postmark circle, .postmark .waves { fill: none; stroke: var(--ink); stroke-width: 1.3; }
+.postmark text { fill: var(--ink); font-family: var(--mono); font-size: 7.4px; }
+.postmark .pm-mid path { fill: var(--ink); }
+.seal {
+  left: 50%; top: 58%; z-index: 9;
+  width: 76px; height: 76px;
+  transform: translate(-50%, -50%);
+  border: 0; padding: 0; border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .4s var(--ease), opacity .4s;
+}
+.seal svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 4px 5px var(--shade)); }
+.seal-ring { fill: none; stroke: var(--wax-hi); stroke-width: 2; opacity: .75; }
+.seal-emb { fill: var(--wax-lo); opacity: .6; }
+.seal-hi { fill: none; stroke: var(--wax-hi); stroke-width: .08; }
+.seal::after {
+  content: ""; position: absolute; inset: -5px; border-radius: 50%;
+  border: 1.5px solid var(--wine); opacity: 0;
+  animation: halo 2.2s var(--ease) infinite;
+}
+@keyframes halo { 0% { transform: scale(.85); opacity: .55; } 100% { transform: scale(1.4); opacity: 0; } }
+.envelope.is-open .seal { transform: translate(-50%, -50%) scale(.4) rotate(-20deg); opacity: 0; pointer-events: none; }
+.envelope.is-open .env-edge,
+.envelope.is-open .env-address,
+.envelope.is-open .stamp,
+.envelope.is-open .postmark { opacity: 0; }
+.envelope.is-open .env-flap { transform: rotateX(180deg); }
+.envelope.is-flap-back .env-flap { z-index: 1; }
+.envelope.is-letter-up .env-letter { transform: translateY(-52%); }
+
+/* ---------- Página ---------- */
+.main { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+.sec { display: flex; flex-direction: column; gap: 18px; padding-block: 60px; }
+
+/* Portada */
+.hero { padding-block: 48px 40px; gap: 22px; }
+.doodle { width: 62px; height: 58px; overflow: visible; }
+.doodle path { fill: none; stroke: var(--wine); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.is-live .doodle path { animation: draw 2.4s var(--ease) .3s both; }
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.hero-title { margin: 6px 0 0; display: flex; align-items: flex-end; gap: .1em; font-weight: 300; }
+.hero-title:focus { outline: none; }
+.wizard, .boarding, .plan { scroll-margin-top: 16px; }
+.hero-num {
+  font-size: clamp(150px, 44vw, 214px);
+  line-height: .72;
+  letter-spacing: -.05em;
+  color: var(--wine);
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+.hero-word {
+  display: flex; flex-direction: column; align-items: flex-start;
+  font-size: clamp(44px, 12.6vw, 62px);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: -.02em;
+}
+.hero-word .script {
+  font-size: 1.14em;
+  color: var(--wine);
+  margin: .02em 0 -.08em -.06em;
+  transform: rotate(-6deg);
+  transform-origin: left center;
+  letter-spacing: 0;
+}
+.lead { margin: 0; font-size: 19px; line-height: 1.6; max-width: 34ch; text-wrap: pretty; }
+.counter {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  margin-top: 4px;
+}
+.counter div { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px 0 12px; min-width: 0; }
+.counter div + div { border-left: 1px solid var(--line); padding-left: 12px; }
+.counter b {
+  font-weight: 400;
+  font-size: clamp(26px, 7.6vw, 34px);
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+.counter span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.counter-note { margin: -6px 0 0; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+
+/* Carta */
+.letter {
+  position: relative;
+  margin: 6px 0 0;
+  padding: 30px 22px 30px;
+  background: var(--paper);
+  border: 7px solid transparent;
+  border-image: var(--airmail) 7;
+  box-shadow: 0 1px 2px var(--shade), 0 22px 50px -20px var(--shade);
+  display: flex; flex-direction: column; gap: 14px;
+  font-size: 19px; line-height: 1.62;
+  transform: rotate(-.6deg);
+}
+.letter p { margin: 0; }
+.letter-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 4px; }
+.par-avion {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--paper); background: var(--wine);
+  padding: 5px 8px 4px; border-radius: 2px;
+}
+.letter-date { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--ink-2); }
+.letter .letter-greet { font-size: 54px; color: var(--wine); margin: 6px 0 2px; }
+.letter .letter-sign { font-size: clamp(36px, 10.5vw, 46px); color: var(--wine); text-align: right; margin-top: 12px; transform: rotate(-4deg); transform-origin: right center; }
+.letter .letter-name { align-self: flex-end; font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin-top: -4px; }
+
+/* Distancia + abrazo */
+.dist { align-items: center; text-align: center; }
+.km {
+  margin: 0;
+  font-weight: 300;
+  font-size: clamp(84px, 25vw, 124px);
+  line-height: .9;
+  letter-spacing: -.045em;
+  color: var(--wine);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+.km small { font-size: .28em; letter-spacing: 0; margin-left: .14em; color: var(--ink-2); font-weight: 400; }
+.dist .sub { max-width: 28ch; }
+.route { margin: 4px 0 0; width: 100%; max-width: 420px; }
+.route svg { display: block; width: 100%; height: auto; overflow: visible; }
+.arc { fill: none; stroke: var(--wine); stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: .5 7; animation: flow 1.6s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -7.5; } }
+.pin circle { fill: var(--wine); }
+.pin .pulse { fill: none; stroke: var(--wine); stroke-width: 1.2; transform-box: fill-box; transform-origin: center; animation: ping 2.4s var(--ease) infinite; }
+@keyframes ping { from { transform: scale(1); opacity: .7; } to { transform: scale(3.6); opacity: 0; } }
+.route text { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; fill: var(--ink-2); }
+.traveler path { fill: var(--wine); }
+.hug { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 6px; }
+.hug-btn {
+  position: relative;
+  width: 116px; height: 116px;
+  border: 0; padding: 0; border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 1px 2px var(--shade), 0 16px 36px -12px var(--shade);
+  display: grid; place-items: center;
+  cursor: pointer;
+  touch-action: none;
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.hug-btn .ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); pointer-events: none; }
+.ring circle { fill: none; stroke-width: 3; }
+.ring-bg { stroke: var(--line); }
+.ring-fg { stroke: var(--wine); stroke-linecap: round; }
+.ring-fg.is-decay { transition: stroke-dashoffset .35s var(--ease); }
+.hug-heart { width: 46px; height: 46px; pointer-events: none; transform: scale(calc(1 + var(--p, 0) * .34)); }
+.hug-heart path { fill: var(--rose); transition: fill .2s; }
+.hug-btn.is-holding .hug-heart path { fill: var(--wine); }
+.hug-btn:not(.is-holding) .hug-heart { animation: beat 1.8s ease-in-out infinite; }
+@keyframes beat { 0%, 56%, 100% { transform: scale(1); } 14% { transform: scale(1.12); } 28% { transform: scale(1); } 42% { transform: scale(1.07); } }
+.hug-msg { margin: 0; max-width: 30ch; min-height: 3.3em; color: var(--ink-2); font-size: 16.5px; line-height: 1.6; text-wrap: balance; }
+
+/* Pregunta */
+.forgive { position: relative; align-items: center; justify-content: center; text-align: center; min-height: 500px; }
+.forgive .title { max-width: 14ch; }
+.answers { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 22px; }
+.btn {
+  -webkit-appearance: none; appearance: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; line-height: 1;
+  padding: 17px 24px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--wine);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .3s var(--ease), background-color .2s, color .2s, box-shadow .2s, opacity .2s;
+}
+.btn-solid { background: var(--wine); color: var(--paper); box-shadow: 0 10px 24px -10px var(--wine-shadow); }
+.btn-line { background: var(--paper); color: var(--wine); }
+.btn-text { background: none; border-color: transparent; color: var(--ink-2); padding-inline: 10px; }
+.btn:disabled { opacity: .35; cursor: not-allowed; box-shadow: none; }
+.btn-solid:not(:disabled):active, .btn-line:active { transform: scale(.97); }
+#yesBtn { transform: scale(var(--grow, 1)); }
+#noBtn.is-free { position: absolute; z-index: 3; margin: 0; transition: left .4s var(--ease), top .4s var(--ease), background-color .2s, color .2s; }
+#noBtn.is-yes { background: var(--wine); color: var(--paper); }
+.spacer { visibility: hidden; pointer-events: none; }
+.forgive-msg { margin: 0; max-width: 26ch; font-size: 23px; line-height: 1.35; font-style: italic; color: var(--wine); text-wrap: balance; }
+.forgive-next { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; }
+
+/* Plan */
+.plan.is-in { animation: rise .9s var(--ease) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+.countdown {
+  align-self: flex-start;
+  margin: 0;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--wine);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 13px 7px;
+}
+.wizard {
+  margin-top: 8px;
+  padding: 22px 16px 16px;
+  background: var(--paper);
+  border-radius: 22px;
+  box-shadow: 0 1px 2px var(--shade), 0 24px 60px -24px var(--shade);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.progress { list-style: none; margin: 0; padding: 0 2px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.progress li { height: 3px; border-radius: 3px; background: var(--line); transition: background-color .3s; }
+.progress li.is-done { background: var(--wine); }
+.progress li.is-current { background: var(--rose); }
+.step { display: flex; flex-direction: column; gap: 4px; padding: 0 2px; transition: opacity .22s ease, transform .22s ease; }
+.step.is-out { opacity: 0; transform: translateX(-12px); }
+.step-title { margin: 2px 0 0; font-weight: 400; font-size: 31px; line-height: 1.1; letter-spacing: -.012em; }
+.step-hint { margin: 0 0 12px; color: var(--ink-2); font-size: 16px; }
+.options { display: flex; flex-direction: column; gap: 10px; margin: 0 -2px; }
+.opt {
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 12px;
+  padding: 14px 14px 14px 16px;
+  text-align: left;
+  background: var(--pink-soft);
+  border: 1.5px solid transparent;
+  border-radius: 16px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .2s, background-color .2s, box-shadow .2s, transform .2s var(--ease);
+}
+.opt:active { transform: scale(.985); }
+.opt[aria-checked="true"] { background: var(--paper); border-color: var(--wine); box-shadow: 0 10px 24px -16px var(--wine-shadow); }
+.opt-body { min-width: 0; }
+.opt-title { display: block; font-size: 18.5px; line-height: 1.25; font-weight: 500; }
+.opt-desc { display: block; margin-top: 5px; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.opt-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; padding-top: 2px; }
+.opt-tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); white-space: nowrap; }
+.opt-check { width: 20px; height: 20px; display: block; }
+.opt-check path { fill: none; stroke: var(--line-strong); stroke-width: .13; transition: fill .2s, stroke .2s; }
+.opt[aria-checked="true"] .opt-check path { fill: var(--wine); stroke: var(--wine); }
+.opt-surprise { background: none; border: 1.5px dashed var(--line-strong); }
+.opt-surprise[aria-checked="true"] { border-style: solid; }
+.wizard-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 2px; }
+
+/* Tarjeta de embarque */
+.boarding { display: flex; flex-direction: column; gap: 18px; }
+.boarding.is-in { animation: rise .9s var(--ease) both; }
+.ticket { filter: drop-shadow(0 24px 30px var(--shade)); }
+.t-top, .t-bottom { background: var(--paper); padding: 0 20px 20px; }
+.t-top {
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  -webkit-mask: radial-gradient(circle 13px at 0 100%, #0000 97%, #000) 0 0 / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 100%, #0000 97%, #000) 100% 0 / 51% 100% no-repeat;
+  mask: radial-gradient(circle 13px at 0 100%, #0000 97%, #000) 0 0 / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 100%, #0000 97%, #000) 100% 0 / 51% 100% no-repeat;
+}
+.t-bottom {
+  border-radius: 0 0 20px 20px;
+  padding-top: 20px;
+  background-image: linear-gradient(90deg, var(--line-strong) 50%, var(--clear) 0);
+  background-size: 10px 2px; background-repeat: repeat-x; background-position: 0 0;
+  -webkit-mask: radial-gradient(circle 13px at 0 0, #0000 97%, #000) 0 0 / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 0, #0000 97%, #000) 100% 0 / 51% 100% no-repeat;
+  mask: radial-gradient(circle 13px at 0 0, #0000 97%, #000) 0 0 / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 0, #0000 97%, #000) 100% 0 / 51% 100% no-repeat;
+}
+.t-head {
+  margin: 0 -20px;
+  padding: 13px 20px 12px;
+  display: flex; justify-content: space-between; gap: 12px;
+  background: var(--wine); color: var(--paper);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+}
+.t-route { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; margin: 20px 0 18px; }
+.t-port b { display: block; font-weight: 400; font-size: 44px; line-height: 1; letter-spacing: .01em; }
+.t-port span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.t-right { text-align: right; }
+.t-path { display: flex; align-items: center; gap: 8px; }
+.t-path i { flex: 1; height: 0; border-top: 1.5px dashed var(--line-strong); }
+.t-path svg { width: 18px; height: 18px; flex: none; }
+.t-path path { fill: var(--wine); }
+.t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin: 0; }
+.t-grid dt, .t-plan dt { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.t-grid dd { margin: 3px 0 0; font-size: 18px; line-height: 1.25; }
+.t-plan { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.t-plan dd { margin: 3px 0 0; font-size: 19px; line-height: 1.25; font-weight: 500; }
+.t-code {
+  height: 44px; margin-top: 20px;
+  background:
+    repeating-linear-gradient(90deg, var(--ink) 0 2px, var(--clear) 2px 5px, var(--ink) 5px 6px, var(--clear) 6px 9px, var(--ink) 9px 12px, var(--clear) 12px 14px, var(--ink) 14px 15px, var(--clear) 15px 19px);
+  opacity: .82;
+}
+.t-foot { margin: 10px 0 0; text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.ticket-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.ticket-note { margin: 0; text-align: center; color: var(--ink-2); font-size: 15.5px; }
+.copy-fallback {
+  margin: 0; padding: 14px 16px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  font-family: var(--mono); font-size: 12.5px; line-height: 1.6; white-space: pre-wrap;
+  -webkit-user-select: all; user-select: all;
+}
+
+/* Final */
+.final { align-items: center; text-align: center; padding-block: 88px 48px; gap: 20px; }
+.final.is-in { animation: rise .9s var(--ease) both; }
+.final-title { margin: 0; font-weight: 300; font-size: clamp(46px, 13.4vw, 72px); line-height: 1; letter-spacing: -.028em; text-wrap: balance; }
+.final .sub { max-width: 30ch; }
+.kiss {
+  width: 104px; height: 104px; margin-top: 8px;
+  border: 0; padding: 0; border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.kiss svg { width: 100%; height: 100%; display: block; overflow: visible; animation: beat 1.8s ease-in-out infinite; }
+.kiss path { fill: var(--wine); }
+.kiss.is-pop svg { animation: pop .45s var(--ease); }
+@keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.22); } 100% { transform: scale(1); } }
+.kiss-hint { margin: -4px 0 0; font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.kiss-msg { margin: 0; min-height: 1.15em; font-size: 58px; color: var(--wine); }
+.foot { position: relative; z-index: 1; margin: 0; padding: 24px 0 44px; text-align: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+
+@media (min-width: 720px) {
+  .sec { padding-block: 96px; }
+  .wizard { padding: 28px 26px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .hearts-bg { display: none; }
+}
+
+/* ---------- Candado ---------- */
+.lock {
+  position: fixed; inset: 0; z-index: 60;
+  display: grid; place-items: center;
+  background: var(--pink);
+  padding: max(24px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  overflow: hidden auto;
+  transition: opacity .8s var(--ease), visibility .8s;
+}
+.lock::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(70% 50% at 50% 40%, var(--paper) 0%, var(--clear) 70%);
+}
+.lock.is-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+.lock-inner { position: relative; width: 100%; max-width: 340px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.lock-icon { width: 44px; height: 48px; overflow: visible; margin-bottom: 2px; }
+.lock-body { fill: var(--wine); }
+.lock-heart { fill: var(--paper); }
+.lock-shackle { fill: none; stroke: var(--wine); stroke-width: 4; stroke-linecap: round; transform-origin: 33px 17px; transition: transform .6s var(--ease); }
+.lock-icon.is-open .lock-shackle { transform: translateY(-6px) rotate(28deg); }
+.lock-title { margin: 0; font-weight: 400; font-size: clamp(28px, 7.6vw, 36px); line-height: 1.12; letter-spacing: -.015em; text-wrap: balance; }
+.lock-hint { margin: 0; min-height: 1.6em; color: var(--ink-2); font-size: 16px; }
+.code { display: flex; align-items: center; gap: 10px; margin: 6px 0 12px; }
+.code span {
+  width: 46px; height: 58px;
+  display: grid; place-items: center;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  font-size: 30px;
+  font-variant-numeric: lining-nums tabular-nums; font-feature-settings: "lnum" 1, "tnum" 1;
+  transition: border-color .2s, background-color .2s, color .2s;
+}
+.code span.is-filled { border-color: var(--wine); }
+.code i { font-style: normal; font-size: 24px; color: var(--ink-2); }
+.code.is-wrong { animation: shake .45s; }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-9px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-6px); } 80% { transform: translateX(4px); } }
+.code.is-ok span { background: var(--wine); border-color: var(--wine); color: var(--paper); }
+.keypad { display: grid; grid-template-columns: repeat(3, 72px); gap: 12px 20px; justify-content: center; }
+.keypad button {
+  width: 72px; height: 72px;
+  border: 0; border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 1px 2px var(--shade), 0 10px 24px -14px var(--shade);
+  font-size: 28px; font-weight: 400;
+  font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .15s var(--ease), background-color .15s;
+}
+.keypad button:active { transform: scale(.93); background: var(--blush); }
+.keypad .k-del { background: none; box-shadow: none; font-size: 24px; color: var(--ink-2); }
+@media (max-height: 700px) {
+  .keypad { grid-template-columns: repeat(3, 62px); gap: 10px 18px; }
+  .keypad button { width: 62px; height: 62px; font-size: 25px; }
+  .code span { height: 50px; }
+}
+
+/* ---------- Canción ---------- */
+.song { gap: 16px; padding-block: 28px 52px; }
+.song-card {
+  display: flex; align-items: center; gap: 18px;
+  padding: 16px 18px 16px 16px;
+  background: var(--paper);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px var(--shade), 0 18px 40px -22px var(--shade);
+}
+.vinyl {
+  flex: none; width: 84px; height: 84px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: repeating-radial-gradient(circle at center, var(--groove) 0 1px, var(--clear) 1px 3px), var(--vinyl);
+  box-shadow: 0 6px 14px -6px var(--shade);
+}
+.vinyl span { width: 34px; height: 34px; border-radius: 50%; background: var(--rose); display: grid; place-items: center; }
+.vinyl svg { width: 14px; height: 14px; }
+.vinyl path { fill: var(--wine); }
+.vinyl.is-playing { animation: spin 3.6s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.song-info { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.song-info p { margin: 0; }
+.song-kicker { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.song-title { font-size: 23px; line-height: 1.15; font-weight: 500; }
+.song-artist { font-size: 16px; color: var(--ink-2); }
+.song-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.song-note { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+
+/* ---------- Historia ---------- */
+.timeline { position: relative; list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 26px; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1.5px; background: var(--line-strong); }
+.timeline li { position: relative; padding-left: 34px; display: flex; flex-direction: column; gap: 4px; }
+.timeline li::before {
+  content: ""; position: absolute; left: 0; top: 3px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--pink); border: 2px solid var(--wine);
+}
+.timeline .is-today::before { background: var(--wine); box-shadow: 0 0 0 5px var(--glow); }
+.timeline .is-future::before { border-style: dashed; }
+.timeline .is-future::after {
+  content: ""; position: absolute; left: 7px; top: -26px; width: 1.5px; height: 28px;
+  background: repeating-linear-gradient(var(--pink) 0 3px, var(--clear) 3px 6px);
+}
+.tl-date { font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--wine); }
+.timeline p { margin: 0; font-size: 19px; line-height: 1.45; }
+.tl-count {
+  align-self: flex-start; margin-top: 6px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--paper); background: var(--wine);
+  border-radius: 999px; padding: 6px 11px 5px;
+}
+
+/* ---------- Fotos ---------- */
+.photos { gap: 16px; }
+.polaroids {
+  display: flex; gap: 18px;
+  margin: 4px -16px 0; padding: 18px 16px 30px;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-padding-inline: 16px;
+  scrollbar-width: none;
+}
+.polaroids::-webkit-scrollbar { display: none; }
+.polaroid {
+  flex: 0 0 auto; width: min(72vw, 290px);
+  margin: 0; padding: 12px 12px 0;
+  background: var(--paper);
+  box-shadow: 0 1px 2px var(--shade), 0 18px 34px -16px var(--shade);
+  transform: rotate(var(--tilt, 0deg));
+  scroll-snap-align: start;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pol-img { position: relative; aspect-ratio: 3 / 4; max-width: 100%; overflow: hidden; background: var(--undev); }
+.pol-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: sepia(.8) saturate(.3) brightness(.55) blur(10px);
+  transform: scale(1.08);
+  transition: filter 1.8s ease, transform 1.8s var(--ease);
+}
+.pol-img::after { content: ""; position: absolute; inset: 0; background: var(--undev); opacity: .8; transition: opacity 1.8s ease; }
+.polaroid.is-developed .pol-img img { filter: none; transform: none; }
+.polaroid.is-developed .pol-img::after { opacity: 0; }
+.polaroid figcaption { min-height: 2.6em; padding: 10px 4px 14px; display: grid; place-items: center; text-align: center; font-size: 27px; line-height: 1.05; color: var(--ink); }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="atmo" aria-hidden="true"></div>
+<div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+<canvas class="fx" id="fx" aria-hidden="true"></canvas>
+
+<section class="lock" id="lock" aria-labelledby="lockTitle" hidden>
+  <div class="lock-inner">
+    <svg class="lock-icon" id="lockIcon" viewBox="0 0 48 52" aria-hidden="true">
+      <path class="lock-shackle" d="M15 24v-7a9 9 0 0 1 18 0v7"/>
+      <rect class="lock-body" x="8" y="23" width="32" height="25" rx="6"/>
+      <g transform="translate(24 36) scale(5)"><path class="lock-heart" d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/></g>
+    </svg>
+    <p class="label">Solo para <span data-fill="name">María</span></p>
+    <p class="lock-title" id="lockTitle">¿Qué día nos dimos nuestro primer beso?</p>
+    <p class="lock-hint" id="lockHint" aria-live="polite">Día y mes, con cuatro números</p>
+    <div class="code" id="code" aria-label="Contraseña">
+      <span></span><span></span><i>/</i><span></span><span></span>
+    </div>
+    <div class="keypad" id="keypad">
+      <button type="button" data-k="1">1</button>
+      <button type="button" data-k="2">2</button>
+      <button type="button" data-k="3">3</button>
+      <button type="button" data-k="4">4</button>
+      <button type="button" data-k="5">5</button>
+      <button type="button" data-k="6">6</button>
+      <button type="button" data-k="7">7</button>
+      <button type="button" data-k="8">8</button>
+      <button type="button" data-k="9">9</button>
+      <span aria-hidden="true"></span>
+      <button type="button" data-k="0">0</button>
+      <button type="button" class="k-del" data-k="del" aria-label="Borrar">⌫</button>
+    </div>
+  </div>
+</section>
+
+<section class="intro" id="intro" aria-label="Una carta para ti">
+  <div class="intro-inner">
+    <p class="label">Correo aéreo · <span data-fill="city">Łódź</span> → Madrid</p>
+    <p class="intro-title">Ha llegado <em>algo para ti</em></p>
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="env-letter"><p class="script">Feliz seis meses</p></div>
+      <div class="env-left"></div>
+      <div class="env-right"></div>
+      <div class="env-bottom"></div>
+      <div class="env-flap"></div>
+      <div class="env-edge"></div>
+      <p class="env-address" aria-hidden="true"><span class="script" id="envTo">Para mi amor</span><span class="mono">Madrid · España</span></p>
+      <div class="stamp" aria-hidden="true">
+        <div class="stamp-in">
+          <span class="stamp-val">6</span>
+          <svg class="stamp-heart" viewBox="-1.15 -1.2 2.3 2.3"><path d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/></svg>
+          <span class="stamp-country">POLSKA</span>
+        </div>
+      </div>
+      <svg class="postmark" viewBox="0 0 108 63" aria-hidden="true">
+        <defs><path id="pmPath" d="M8 31.5a23.5 23.5 0 1 1 47 0a23.5 23.5 0 1 1 -47 0"/></defs>
+        <circle cx="31.5" cy="31.5" r="29.5"/>
+        <circle cx="31.5" cy="31.5" r="17"/>
+        <text><textPath id="pmText" href="#pmPath" xlink:href="#pmPath" textLength="146" lengthAdjust="spacing">ŁÓDŹ · 18.10.2026 · POLSKA ·</textPath></text>
+        <g class="pm-mid" transform="translate(31.5 32) scale(7)"><path d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/></g>
+        <path class="waves" d="M64 18q5.5-5 11 0t11 0t11 0t11 0M64 31.5q5.5-5 11 0t11 0t11 0t11 0M64 45q5.5-5 11 0t11 0t11 0t11 0"/>
+      </svg>
+      <button class="seal" id="seal" type="button" aria-label="Abrir la carta">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <radialGradient id="waxG" cx="36%" cy="30%" r="78%">
+              <stop offset="0" style="stop-color: var(--wax-hi)"/>
+              <stop offset=".55" style="stop-color: var(--wax)"/>
+              <stop offset="1" style="stop-color: var(--wax-lo)"/>
+            </radialGradient>
+          </defs>
+          <path fill="url(#waxG)" d="M50 4C62 3 71 8 79 14c10 6 16 16 17 29 2 13-2 25-10 35-8 10-20 18-34 18-14 1-27-4-36-13C7 74 3 61 4 48c1-13 6-24 15-33C28 7 39 4 50 4Z"/>
+          <circle class="seal-ring" cx="50" cy="50" r="31"/>
+          <g transform="translate(50 52) scale(17)">
+            <path class="seal-emb" d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/>
+            <path class="seal-hi" d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z" transform="translate(-.05 -.06)"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <p class="intro-hint">Toca el sello para abrirla</p>
+  </div>
+</section>
+
+<main class="main" id="main">
+  <header class="sec hero" id="inicio">
+    <svg class="doodle" viewBox="0 0 120 110" aria-hidden="true"><path pathLength="1" d="M60 98C40 84 12 64 10 40 8 20 26 8 42 12c9 2 15 9 18 18 3-9 9-16 18-18 16-4 34 8 32 28-2 24-30 44-50 58-3 2-6 4-9 6"/></svg>
+    <p class="label">18 · 04 · 2026 — 18 · 10 · 2026</p>
+    <h1 class="hero-title" id="heroTitle" tabindex="-1" aria-label="Seis meses contigo"><span class="hero-num" aria-hidden="true">6</span><span class="hero-word" aria-hidden="true">meses<span class="script">contigo</span></span></h1>
+    <p class="lead">Seis meses desde que empezó lo mejor que me ha pasado. Hoy nos separan más de dos mil kilómetros y, aun así, no hay un solo día en el que no piense en ti.</p>
+    <div class="counter" aria-label="Tiempo que llevamos juntos">
+      <div><b id="cD">183</b><span>días</span></div>
+      <div><b id="cH">00</b><span>horas</span></div>
+      <div><b id="cM">00</b><span>min</span></div>
+      <div><b id="cS">00</b><span>seg</span></div>
+    </div>
+    <p class="counter-note">juntos, y sumando</p>
+  </header>
+
+  <section class="sec song" id="cancion" aria-label="Nuestra canción">
+    <p class="label">Antes de seguir, ponle banda sonora</p>
+    <div class="song-card">
+      <div class="vinyl" id="vinyl" aria-hidden="true"><span><svg viewBox="-1.15 -1.2 2.3 2.3"><path d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/></svg></span></div>
+      <div class="song-info">
+        <p class="song-kicker">Nuestra canción</p>
+        <p class="song-title">Una casa en el Teide</p>
+        <p class="song-artist">Gara Durán · Barry B</p>
+      </div>
+    </div>
+    <div class="song-actions">
+      <a class="btn btn-solid" id="songBtn" href="https://open.spotify.com/track/07uF58oxwJoLE96zwvSiiI" target="_blank" rel="noopener">Ponla en Spotify</a>
+      <a class="btn btn-text" href="https://www.youtube.com/results?search_query=Gara+Dur%C3%A1n+Barry+B+Una+casa+en+el+Teide" target="_blank" rel="noopener">o en YouTube</a>
+    </div>
+    <p class="song-note">Dale al play, vuelve aquí y sigue leyendo con ella sonando.</p>
+  </section>
+
+  <section class="sec" id="carta" aria-label="Carta">
+    <p class="label">Una carta para ti</p>
+    <article class="letter">
+      <header class="letter-head">
+        <span class="par-avion">Por avión · Par avion</span>
+        <span class="letter-date"><span data-fill="city">Łódź</span>, 18 de octubre de 2026</span>
+      </header>
+      <p class="letter-greet script">Mi friki favorita:</p>
+      <p>Hoy hacemos seis meses y me pilla a más de dos mil kilómetros de ti. Lo siento muchísimo. Debería estar ahí, celebrándolo contigo como te mereces, y en vez de eso te escribo desde <span data-fill="city">Łódź</span>.</p>
+      <p>Nos conocemos prácticamente de toda la vida y, aun así, estos seis meses han sido lo mejor que me ha pasado. Quién nos iba a decir que todo empezaría viendo <i>Teen Beach Movie</i>.</p>
+      <p>Gracias por tu paciencia, por cada llamada y por cada mensaje de buenas noches, aunque a veces te quedes dormida a mitad, marmota. Gracias por hacer que todo esto se sienta un poco menos lejos.</p>
+      <p>Como no puedo darte un abrazo en persona, te he preparado esto. Es pequeñito, pero está hecho pensando en ti en cada detalle. El 23 de diciembre te lo doy en persona, y no pienso soltarte.</p>
+      <p class="letter-sign script">Te quiero muchísimo</p>
+      <p class="letter-name" id="letterName" hidden></p>
+    </article>
+  </section>
+
+  <section class="sec story" id="historia" aria-labelledby="storyTitle">
+    <p class="label">Nuestra historia</p>
+    <h2 class="title" id="storyTitle">De toda la vida <em>a esto</em></h2>
+    <ol class="timeline">
+      <li><span class="tl-date">Desde siempre</span><p>Nos conocemos prácticamente de toda la vida.</p></li>
+      <li><span class="tl-date">29 · 03 · 2026</span><p>Nuestro primer beso, viendo <i>Teen Beach Movie</i>.</p></li>
+      <li><span class="tl-date">18 · 04 · 2026</span><p>Nos pedimos salir. Empieza lo mejor.</p></li>
+      <li class="is-today"><span class="tl-date">18 · 10 · 2026 · Hoy</span><p>Seis meses. Tú en Madrid y yo en <span data-fill="city">Łódź</span>, pero más cerca que nunca.</p></li>
+      <li class="is-future"><span class="tl-date">23 · 12 · 2026</span><p>Vuelvo a casa. Vuelvo a ti.</p><span class="tl-count" id="tlCount" hidden></span></li>
+    </ol>
+  </section>
+
+  <section class="sec photos" id="fotos" aria-labelledby="photosTitle" hidden>
+    <p class="label">Nuestras fotos</p>
+    <h2 class="title" id="photosTitle">Seis meses <em>en fotos</em></h2>
+    <p class="sub" id="photosHint">Toca cada foto para revelarla. Desliza para ver más.</p>
+    <div class="polaroids" id="polaroids" role="list"></div>
+  </section>
+
+  <section class="sec dist" id="distancia" aria-label="La distancia">
+    <p class="label">Ahora mismo nos separan</p>
+    <p class="km"><span id="km">2.171</span><small>km</small></p>
+    <p class="sub">entre Madrid y <span data-fill="city">Łódź</span>. Demasiados.</p>
+    <figure class="route">
+      <svg viewBox="0 0 340 180" id="routeSvg" role="img" aria-label="Un corazón viaja de Madrid a Łódź">
+        <path class="arc" id="arc" d="M44 140C110 30 220 6 296 58"/>
+        <g class="pin" transform="translate(44 140)"><circle r="4.5"/><circle class="pulse" r="4.5"/></g>
+        <g class="pin" id="pinCity" transform="translate(296 58)"><circle r="4.5"/><circle class="pulse" r="4.5"/></g>
+        <text x="44" y="166" text-anchor="middle">MADRID</text>
+        <text x="296" y="84" text-anchor="middle" id="cityLabel">ŁÓDŹ</text>
+        <g class="traveler" id="traveler" opacity="0"><path d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z" transform="scale(9)"/></g>
+      </svg>
+    </figure>
+    <div class="hug">
+      <button class="hug-btn" id="hugBtn" type="button" aria-describedby="hugMsg">
+        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="56"/><circle class="ring-fg" id="ringFg" cx="60" cy="60" r="56"/></svg>
+        <svg class="hug-heart" viewBox="-1.15 -1.2 2.3 2.3" aria-hidden="true"><path d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/></svg>
+        <span class="sr-only">Mantén pulsado para mandar un abrazo</span>
+      </button>
+      <p class="hug-msg" id="hugMsg" aria-live="polite">Mantén pulsado el corazón para mandarme un abrazo hasta <span data-fill="city">Łódź</span>.</p>
+    </div>
+  </section>
+
+  <section class="sec forgive" id="perdon" aria-label="Una pregunta">
+    <p class="label">Una pregunta importante</p>
+    <h2 class="title" id="forgiveTitle">¿Me perdonas por no estar ahí en nuestros <em>seis meses</em>?</h2>
+    <div class="answers" id="answers">
+      <button class="btn btn-solid" id="yesBtn" type="button">Sí, te perdono</button>
+      <button class="btn btn-line" id="noBtn" type="button">No</button>
+    </div>
+    <p class="forgive-msg" id="forgiveMsg" aria-live="polite"></p>
+    <a class="forgive-next" id="forgiveNext" href="#plan" hidden>Ahora viene lo bueno ↓</a>
+  </section>
+
+  <section class="sec plan" id="plan" aria-labelledby="planTitle" hidden>
+    <p class="label">Cuando vuelva de Polonia</p>
+    <h2 class="title" id="planTitle">Te debo la <em>cita perfecta</em></h2>
+    <p class="sub">Lo primero que quiero hacer al volver es verte. Lo segundo, llevarte a la cita perfecta. Como hoy no puedo estar, la diseñas tú: tres pasos y cinco opciones en cada uno. Tú eliges y yo me encargo de todo lo demás.</p>
+    <p class="countdown" id="countdown" hidden></p>
+    <div class="wizard" id="wizard">
+      <ol class="progress" id="progress" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+      <div class="step" id="step">
+        <p class="label" id="stepKicker">Paso 1 de 3</p>
+        <h3 class="step-title" id="stepTitle">¿Qué hacemos?</h3>
+        <p class="step-hint" id="stepHint"></p>
+        <div class="options" id="options" role="radiogroup" aria-labelledby="stepTitle"></div>
+      </div>
+      <div class="wizard-nav">
+        <button class="btn btn-text" id="backBtn" type="button">← Atrás</button>
+        <button class="btn btn-solid" id="nextBtn" type="button" disabled>Siguiente</button>
+      </div>
+    </div>
+    <div class="boarding" id="boarding" hidden>
+      <p class="label">Tu tarjeta de embarque</p>
+      <div class="ticket" id="ticket">
+        <div class="t-top">
+          <div class="t-head"><span>Tarjeta de embarque</span><span>Vuelo TQM 618</span></div>
+          <div class="t-route">
+            <div class="t-port"><b id="tFrom">LCJ</b><span data-fill="city">Łódź</span></div>
+            <div class="t-path" aria-hidden="true"><i></i><svg viewBox="-1.15 -1.2 2.3 2.3"><path d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/></svg><i></i></div>
+            <div class="t-port t-right"><b>MAD</b><span>Madrid</span></div>
+          </div>
+          <dl class="t-grid">
+            <div><dt>Pasajeros</dt><dd id="tPax">Tú y yo</dd></div>
+            <div><dt>Asiento</dt><dd>A tu lado</dd></div>
+            <div><dt>Fecha</dt><dd id="tDate">Cuando vuelva</dd></div>
+            <div><dt>Puerta</dt><dd>Llegadas</dd></div>
+          </dl>
+        </div>
+        <div class="t-bottom">
+          <dl class="t-plan" id="tPlan"></dl>
+          <div class="t-code" aria-hidden="true"></div>
+          <p class="t-foot">Válida para una cita perfecta · No caduca</p>
+        </div>
+      </div>
+      <div class="ticket-actions">
+        <a class="btn btn-solid" id="waBtn" href="https://wa.me/" target="_blank" rel="noopener">Mandármelo por WhatsApp</a>
+        <button class="btn btn-line" id="copyBtn" type="button">Copiar el plan</button>
+        <button class="btn btn-text" id="editBtn" type="button">Cambiar algo</button>
+      </div>
+      <pre class="copy-fallback" id="copyFallback" hidden></pre>
+      <p class="ticket-note">Haz una captura y guárdala. Es un vale canjeable.</p>
+    </div>
+  </section>
+
+  <section class="sec final" id="final" aria-labelledby="finalTitle" hidden>
+    <p class="label">18 · 10 · 2026</p>
+    <h2 class="final-title" id="finalTitle">Feliz <em>seis meses</em>, mi amor</h2>
+    <p class="sub">Gracias por esperarme. Ojalá estuviera ahí para decírtelo mirándote a los ojos, pero el 23 de diciembre te lo digo en persona.</p>
+    <button class="kiss" id="kissBtn" type="button" aria-describedby="kissMsg"><svg viewBox="-1.15 -1.2 2.3 2.3" aria-hidden="true"><path d="M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z"/></svg><span class="sr-only">Mandar un beso</span></button>
+    <p class="kiss-hint" id="kissHint">Toca el corazón</p>
+    <p class="kiss-msg script" id="kissMsg" aria-live="polite"></p>
+  </section>
+</main>
+<footer class="foot">Hecho con amor desde <span data-fill="city">Łódź</span> · 18.10.2026</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  // ===== Personaliza aquí =====
+  const CONFIG = {
+    nombre: 'María',                     // Su nombre (sobre, candado y tarjeta)
+    apellido: 'Roa',
+    firma: 'César García Fernández',     // Firma de la carta
+    inicio: '2026-04-18T00:00:00+02:00', // El día que empezasteis
+    ciudad: 'Łódź',                      // Łódź, Varsovia, Cracovia, Breslavia, Gdańsk o Poznań
+    vuelta: '2026-12-23',                // Día que vuelves, 'AAAA-MM-DD'. Vacío: sin cuenta atrás
+    whatsapp: '34619211231',             // Tu número con prefijo y sin '+'
+    clave: '2903',                       // Contraseña: día y mes del primer beso. Vacía: sin candado
+  };
+
+  const STEPS = [
+    {
+      key: 'plan', label: 'Plan', emoji: '✨',
+      kicker: 'Paso 1 de 3', title: '¿Qué hacemos?', hint: 'El plan de la tarde.',
+      options: [
+        { t: 'Atardecer en el Templo de Debod', d: 'El mejor atardecer de Madrid, con un templo egipcio de más de 2.000 años de testigo.', tag: 'Gratis' },
+        { t: 'Barca en el Retiro', d: 'Tú y yo en el Estanque Grande. Remo yo, prometido. Y no te tiro al agua.', tag: '€' },
+        { t: 'Baños árabes', d: 'Hammam Al Ándalus: agua caliente, velas y nada de prisas. Desconectar del mundo un rato, juntos.', tag: '€€€' },
+        { t: 'Clase de cerámica para dos', d: 'Haremos una taza horrible cada uno y las usaremos para siempre.', tag: '€€' },
+        { t: 'Perdernos por el Prado', d: 'Es gratis las dos últimas horas. Cada uno elige su cuadro favorito y se lo explica al otro.', tag: 'Gratis' },
+      ],
+      surprise: { t: 'Sorpresa', d: 'Tú solo dime a qué hora te recojo.', tag: 'Misterio' },
+    },
+    {
+      key: 'food', label: 'Comida', emoji: '🍽️',
+      kicker: 'Paso 2 de 3', title: '¿Dónde comemos?', hint: 'Que con hambre no hay romanticismo que valga.',
+      options: [
+        { t: 'Sushi en Miyama', d: 'La barra de sushi de toda la vida junto a Plaza de España, con un sushiman de los buenos. Te dejo el último nigiri de salmón (o no).', tag: '€€' },
+        { t: 'Salmon Guru', d: 'Uno de los mejores bares de cócteles del mundo, todo neón y salmones. Cenamos picoteando y brindamos por nosotros.', tag: '€€' },
+        { t: 'Carne a la brasa en Sua', d: 'Txuleta a la brasa para compartir en un jardín de invierno del Barrio de las Letras.', tag: '€€€' },
+        { t: 'Bacira, de la Guía Michelin', d: 'Tiene el Bib Gourmand de Michelin: cocina mediterránea, japonesa y nikkei para compartir. Alta cocina sin arruinarnos.', tag: 'Michelin' },
+        { t: 'Cena en casa, cocino yo', d: 'Velas, tu plato favorito y yo intentando no quemar nada.', tag: 'Casero' },
+      ],
+      surprise: { t: 'Sorpresa', d: 'Confía en mi buen gusto.', tag: 'Misterio' },
+    },
+    {
+      key: 'after', label: 'Para terminar', emoji: '🌙',
+      kicker: 'Paso 3 de 3', title: '¿Y para terminar?', hint: 'La guinda de la noche.',
+      options: [
+        { t: 'Chocolate con churros en San Ginés', d: 'Abierta desde 1894. El final más dulce, y el más madrileño.', tag: '€' },
+        { t: 'Una copa en la Azotea del Círculo', d: 'Madrid entero a nuestros pies, desde una de las mejores vistas de la ciudad.', tag: '€€' },
+        { t: 'Paseo de noche por el Madrid de los Austrias', d: 'Sin prisa, de la mano, perdiéndonos por las callejuelas.', tag: 'Gratis' },
+        { t: 'Karaoke en sala privada', d: 'Te dedico una canción. Vas a sentirla, en todos los sentidos.', tag: '€' },
+        { t: 'Peli y manta', d: 'El plan más infravalorado del mundo. Eliges tú la peli.', tag: 'Gratis' },
+      ],
+      surprise: { t: 'Sorpresa', d: 'Lo sabrás cuando llegue el momento.', tag: 'Misterio' },
+    },
+    {
+      key: 'bag', label: 'En la maleta', emoji: '🧳',
+      kicker: 'Paso extra', title: '¿Qué te traigo de Polonia?', hint: 'Lo que vendrá en mi maleta.',
+      options: [
+        { t: 'Ptasie mleczko', d: 'Bombones de nube cubiertos de chocolate. Su nombre significa «leche de pájaro», y en Polonia se dice de algo tan especial que casi no existe. Como tú.', tag: 'Dulce' },
+        { t: 'Chocolate Wedel', d: 'El chocolate más famoso de Polonia. Lo hacen en Varsovia desde 1851.', tag: 'Dulce' },
+        { t: 'Algo de ámbar del Báltico', d: 'Lo llaman el oro de Polonia. Para que lleves un trocito de aquí contigo.', tag: 'Detalle' },
+        { t: 'Una bola de Navidad de cristal', d: 'Pintada a mano, como las de aquí. Para que tu árbol tenga algo mío este año.', tag: 'Detalle' },
+        { t: 'Pierogi', d: 'Si sobreviven al viaje en la maleta.', tag: 'Arriesgado' },
+      ],
+      surprise: { t: 'Solo a mí', d: 'Con muchísimas ganas de verte.', tag: '♥' },
+    },
+  ];
+
+  const CITIES = {
+    'Łódź':      { lat: 51.7592, lon: 19.4560, code: 'LCJ', mark: 'ŁÓDŹ' },
+    'Varsovia':  { lat: 52.2297, lon: 21.0122, code: 'WAW', mark: 'WARSZAWA' },
+    'Cracovia':  { lat: 50.0647, lon: 19.9450, code: 'KRK', mark: 'KRAKÓW' },
+    'Breslavia': { lat: 51.1079, lon: 17.0385, code: 'WRO', mark: 'WROCŁAW' },
+    'Gdańsk':    { lat: 54.3520, lon: 18.6466, code: 'GDN', mark: 'GDAŃSK' },
+    'Poznań':    { lat: 52.4064, lon: 16.9252, code: 'POZ', mark: 'POZNAŃ' },
+  };
+  const MADRID = { lat: 40.4168, lon: -3.7038 };
+  const HEART = "M0 .78C-.36 .5-1 .08-1-.38-1-.74-.74-1-.44-1-.2-1-.05-.86 0-.66.05-.86.2-1 .44-1 .74-1 1-.74 1-.38 1 .08.36.5 0 .78Z";
+  const PHOTOS = [{"src":"fotos/01.jpg","w":900,"h":1200,"cap":"Madrid, Madrid, Madrid… y tú","alt":"María y César abrazados delante de un cartel de Madrid"},{"src":"fotos/02.jpg","w":675,"h":1200,"cap":"Mi plan favorito: tú","alt":"María y César besándose en una fiesta"},{"src":"fotos/03.jpg","w":900,"h":1200,"cap":"El día de las cascadas","alt":"María y César junto a una cascada"},{"src":"fotos/04.jpg","w":900,"h":1198,"cap":"Mi persona favorita","alt":"Selfi de María y César delante de una cascada"},{"src":"fotos/05.jpg","w":900,"h":1200,"cap":"Y luego dices que no sales bien","alt":"María posando junto a una cascada"},{"src":"fotos/06.jpg","w":900,"h":1200,"cap":"Las mejores vistas","alt":"César y María en un mirador"},{"src":"fotos/07.jpg","w":900,"h":1200,"cap":"Madrid de noche, contigo","alt":"María y César de noche en el centro de Madrid"},{"src":"fotos/08.jpg","w":813,"h":1200,"cap":"Esta me la sé de memoria","alt":"María haciéndose un selfi en el espejo"},{"src":"fotos/09.jpg","w":900,"h":1200,"cap":"Mi friki favorita","alt":"María poniendo una cara graciosa"}];
+
+  // ===== Utilidades =====
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const later = (ms, fn) => setTimeout(fn, reduce ? Math.min(ms, 150) : ms);
+  const vibrate = p => { try { if (navigator.vibrate) navigator.vibrate(p); } catch (_) { /* sin vibración */ } };
+  const center = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
+  const fmt = n => n.toLocaleString('de-DE'); // 2.171 (con punto, como se escribe en España)
+  const smooth = reduce ? 'auto' : 'smooth';
+
+  const KEY = 'seis-meses-v1';
+  const store = {
+    get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (_) { return {}; } },
+    set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (_) { /* sin almacenamiento */ } },
+    clear() { try { localStorage.removeItem(KEY); } catch (_) { /* sin almacenamiento */ } },
+  };
+  const hash = location.hash.slice(1);
+  if (hash === 'reset') store.clear();
+  const state = store.get();
+  const save = () => store.set(state);
+
+  // ===== Datos de la ciudad =====
+  const city = CITIES[CONFIG.ciudad] ? CONFIG.ciudad : 'Łódź';
+  const C = CITIES[city];
+  const toRad = Math.PI / 180;
+  const h = Math.sin((C.lat - MADRID.lat) * toRad / 2) ** 2 +
+    Math.cos(MADRID.lat * toRad) * Math.cos(C.lat * toRad) * Math.sin((C.lon - MADRID.lon) * toRad / 2) ** 2;
+  const dist = Math.round(2 * 6371 * Math.asin(Math.sqrt(h)));
+
+  $$('[data-fill="city"]').forEach(el => { el.textContent = city; });
+  $('#cityLabel').textContent = C.mark;
+  $('#pmText').textContent = `${C.mark} · 18.10.2026 · POLSKA ·`;
+  $('#tFrom').textContent = C.code;
+  $('#routeSvg').setAttribute('aria-label', `Un corazón viaja de Madrid a ${city}`);
+  $('#km').textContent = fmt(dist);
+  if (CONFIG.nombre) {
+    $$('[data-fill="name"]').forEach(el => { el.textContent = CONFIG.nombre; });
+    $('#envTo').textContent = `Para ${CONFIG.nombre} ${CONFIG.apellido || ''}`.trim();
+    if (CONFIG.firma) $('#tPax').textContent = `${CONFIG.nombre} y ${CONFIG.firma.split(' ')[0]}`;
+  }
+  if (CONFIG.firma) { const n = $('#letterName'); n.textContent = CONFIG.firma; n.hidden = false; }
+
+  // ===== Contador =====
+  const start = new Date(CONFIG.inicio).getTime();
+  const pad = n => String(n).padStart(2, '0');
+  const cD = $('#cD'), cH = $('#cH'), cM = $('#cM'), cS = $('#cS');
+  function tick() {
+    const s = Math.floor(Math.max(0, Date.now() - start) / 1000);
+    cD.textContent = Math.floor(s / 86400);
+    cH.textContent = pad(Math.floor(s / 3600) % 24);
+    cM.textContent = pad(Math.floor(s / 60) % 60);
+    cS.textContent = pad(s % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  if (CONFIG.vuelta) {
+    const ret = new Date(CONFIG.vuelta + 'T12:00:00');
+    const days = Math.ceil((new Date(CONFIG.vuelta + 'T00:00:00') - Date.now()) / 86400000);
+    if (days > 0) {
+      const cd = $('#countdown'), tl = $('#tlCount');
+      cd.textContent = days === 1 ? 'Mañana vuelvo' : `Faltan ${days} días para verte`;
+      tl.textContent = days === 1 ? 'Mañana' : `Faltan ${days} días`;
+      cd.hidden = false;
+      tl.hidden = false;
+    }
+    $('#tDate').textContent = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }).format(ret);
+  }
+
+  // ===== Corazones de fondo =====
+  if (!reduce) {
+    const bg = $('#heartsBg');
+    for (let i = 0; i < 7; i++) {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '-1.15 -1.2 2.3 2.3');
+      svg.innerHTML = `<path d="${HEART}"/>`;
+      svg.style.cssText = `--x:${((i + Math.random()) / 7 * 100).toFixed(1)}%;--s:${(10 + Math.random() * 14).toFixed(0)}px;` +
+        `--d:${(16 + Math.random() * 14).toFixed(1)}s;--delay:${(-Math.random() * 30).toFixed(1)}s;` +
+        `--o:${(.16 + Math.random() * .16).toFixed(2)};--sway:${(Math.random() * 60 - 30).toFixed(0)}px`;
+      bg.append(svg);
+    }
+  }
+
+  // ===== Partículas (lluvia y explosiones de corazones) =====
+  const fx = (() => {
+    const cv = $('#fx'), ctx = cv.getContext('2d');
+    const shape = new Path2D(HEART);
+    const css = getComputedStyle(document.documentElement);
+    const colors = ['--wine', '--rose', '--blush', '--wax-hi', '--rose'].map(v => css.getPropertyValue(v).trim() || '#E07D97');
+    let W = 0, H = 0, parts = [], raf = 0;
+    function size() {
+      const d = Math.min(window.devicePixelRatio || 1, 2);
+      W = window.innerWidth; H = window.innerHeight;
+      cv.width = Math.round(W * d); cv.height = Math.round(H * d);
+      cv.style.width = W + 'px'; cv.style.height = H + 'px';
+      ctx.setTransform(d, 0, 0, d, 0, 0);
+    }
+    size();
+    window.addEventListener('resize', size);
+    function add(p) { parts.push(p); if (!raf) raf = requestAnimationFrame(frame); }
+    function burst(x, y, n = 18, o = {}) {
+      const power = o.power || 1, sz = o.size || 1;
+      if (reduce) n = Math.ceil(n / 3);
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * Math.PI * 2, v = (2 + Math.random() * 5) * power;
+        add({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 2.5 * power, g: .12, s: (5 + Math.random() * 7) * sz,
+          r: Math.random() * .8 - .4, vr: Math.random() * .1 - .05, life: 0, max: 55 + Math.random() * 45, c: colors[i % colors.length] });
+      }
+    }
+    function rain(n = 40) {
+      if (reduce) n = Math.ceil(n / 4);
+      for (let i = 0; i < n; i++) {
+        add({ x: Math.random() * W, y: -20 - Math.random() * H * .6, vx: Math.random() - .5, vy: 1.5 + Math.random() * 2.5, g: .02,
+          s: 6 + Math.random() * 9, r: Math.random() - .5, vr: Math.random() * .04 - .02, life: 0, max: 170 + Math.random() * 90,
+          c: colors[i % colors.length], sway: 1 + Math.random() * 6 });
+      }
+    }
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      parts = parts.filter(p => p.life < p.max && p.y < H + 40);
+      for (const p of parts) {
+        p.life++; p.vy += p.g; p.vx *= .985; p.vy *= .992;
+        p.x += p.vx + (p.sway ? Math.sin((p.life + p.sway * 10) / 18) * .6 : 0);
+        p.y += p.vy; p.r += p.vr;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, Math.min(1, (p.max - p.life) / 25));
+        ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.scale(p.s, p.s);
+        ctx.fillStyle = p.c; ctx.fill(shape);
+        ctx.restore();
+      }
+      raf = parts.length ? requestAnimationFrame(frame) : 0;
+    }
+    return { burst, rain };
+  })();
+
+  // ===== Sobre =====
+  const intro = $('#intro'), env = $('#envelope'), main = $('#main'), seal = $('#seal');
+  let opened = false;
+  function enterPage() {
+    opened = true;
+    document.body.classList.remove('is-locked');
+    main.inert = false;
+    document.body.classList.add('is-live');
+  }
+  function openEnvelope() {
+    if (env.classList.contains('is-open')) return;
+    fx.burst(...center(seal), 22, { power: .9 });
+    vibrate(18);
+    intro.classList.add('is-opening');
+    env.classList.add('is-open');
+    later(380, () => env.classList.add('is-flap-back'));
+    later(620, () => env.classList.add('is-letter-up'));
+    later(1900, () => {
+      window.scrollTo(0, 0);
+      intro.classList.add('is-leaving');
+      enterPage();
+      fx.rain(26);
+    });
+    later(2900, () => {
+      intro.hidden = true;
+      $('#heroTitle').focus({ preventScroll: true });
+    });
+  }
+  if (hash === 'todo') {
+    intro.hidden = true;
+    enterPage();
+  } else {
+    document.body.classList.add('is-locked');
+    main.inert = true;
+    env.addEventListener('click', openEnvelope);
+    if (CONFIG.clave && !state.unlocked) showLock();
+  }
+
+  // ===== Candado (contraseña: el día del primer beso) =====
+  function showLock() {
+    const lock = $('#lock'), codeEl = $('#code'), hint = $('#lockHint');
+    const slots = $$('span', codeEl);
+    const HINTS = [
+      'Mmm, no. Prueba otra vez.',
+      'Pista: estábamos viendo Teen Beach Movie.',
+      'Otra pista: fue en marzo.',
+      'Vale, última pista: el día 29.',
+    ];
+    let typed = '', fails = 0, done = false;
+    lock.hidden = false;
+    intro.inert = true;
+    const draw = () => slots.forEach((el, i) => { el.textContent = typed[i] || ''; el.classList.toggle('is-filled', i < typed.length); });
+    function check() {
+      if (typed === CONFIG.clave) {
+        done = true;
+        state.unlocked = true;
+        save();
+        codeEl.classList.add('is-ok');
+        hint.textContent = 'Sabía que te acordarías.';
+        $('#lockIcon').classList.add('is-open');
+        fx.burst(...center(codeEl), 30);
+        vibrate([20, 40, 20]);
+        later(1100, () => { lock.classList.add('is-leaving'); intro.inert = false; });
+        later(1900, () => { lock.hidden = true; seal.focus({ preventScroll: true }); });
+        return;
+      }
+      fails++;
+      hint.textContent = HINTS[Math.min(fails, HINTS.length) - 1];
+      codeEl.classList.remove('is-wrong');
+      void codeEl.offsetWidth;
+      codeEl.classList.add('is-wrong');
+      vibrate([40, 30, 40]);
+      setTimeout(() => { typed = ''; draw(); }, 450);
+    }
+    function press(k) {
+      if (done) return;
+      if (k === 'del') { typed = typed.slice(0, -1); draw(); return; }
+      if (typed.length >= 4) return;
+      typed += k;
+      draw();
+      vibrate(6);
+      if (typed.length === 4) setTimeout(check, 200);
+    }
+    $('#keypad').addEventListener('click', e => { const b = e.target.closest('button[data-k]'); if (b) press(b.dataset.k); });
+    document.addEventListener('keydown', e => {
+      if (done || lock.hidden) return;
+      if (/^[0-9]$/.test(e.key)) press(e.key);
+      else if (e.key === 'Backspace') press('del');
+    });
+  }
+
+  // ===== Canción =====
+  const vinyl = $('#vinyl');
+  if (state.song) vinyl.classList.add('is-playing');
+  $('#songBtn').addEventListener('click', () => { vinyl.classList.add('is-playing'); state.song = true; save(); });
+
+  // ===== Fotos (se revelan al tocarlas) =====
+  if (Array.isArray(PHOTOS) && PHOTOS.length) {
+    const wrap = $('#polaroids');
+    const figs = PHOTOS.map((p, i) => {
+      const fig = document.createElement('figure');
+      fig.className = 'polaroid';
+      fig.setAttribute('role', 'listitem');
+      fig.tabIndex = 0;
+      fig.style.setProperty('--tilt', (i % 2 ? 1.6 : -1.8) + 'deg');
+      fig.innerHTML = '<div class="pol-img"><img alt="" loading="lazy" decoding="async"></div><figcaption class="script"></figcaption>';
+      const img = fig.querySelector('img');
+      img.src = p.src;
+      img.alt = p.alt;
+      img.width = p.w;
+      img.height = p.h;
+      fig.querySelector('figcaption').textContent = p.cap;
+      const develop = () => {
+        if (fig.classList.contains('is-developed')) return;
+        fig.classList.add('is-developed');
+        fx.burst(...center(fig), 10, { power: .6, size: .8 });
+        vibrate(10);
+      };
+      fig.addEventListener('click', develop);
+      fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); develop(); } });
+      wrap.append(fig);
+      return fig;
+    });
+    $('#fotos').hidden = false;
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(([en]) => {
+        if (!en.isIntersecting) return;
+        io.disconnect();
+        later(700, () => figs[0].click());
+      }, { threshold: .6 });
+      io.observe(figs[0]);
+    }
+  }
+
+  document.addEventListener('pointerdown', e => {
+    if (!opened || e.target.closest('button, a, .opt, .polaroid, pre, input, textarea')) return;
+    fx.burst(e.clientX, e.clientY, 6, { power: .55, size: .75 });
+  }, { passive: true });
+
+  // ===== Kilómetros (cuenta al aparecer) =====
+  const kmEl = $('#km');
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver(([en]) => {
+      if (!en.isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now();
+      (function count(now) {
+        const k = Math.min(1, (now - t0) / 1100);
+        kmEl.textContent = fmt(Math.round(dist * (1 - Math.pow(1 - k, 3))));
+        if (k < 1) requestAnimationFrame(count);
+      })(t0);
+    }, { threshold: .6 });
+    io.observe(kmEl);
+  }
+
+  // ===== Abrazo (mantener pulsado) =====
+  const hugBtn = $('#hugBtn'), ringFg = $('#ringFg'), hugMsg = $('#hugMsg');
+  const arc = $('#arc'), traveler = $('#traveler'), pinCity = $('#pinCity');
+  const RING = 2 * Math.PI * 56, HOLD = 1300;
+  let holding = false, sending = false, holdT0 = 0, holdRaf = 0, hugs = state.hugs || 0;
+  ringFg.style.strokeDasharray = RING;
+  ringFg.style.strokeDashoffset = RING;
+  function setP(p) {
+    ringFg.style.strokeDashoffset = RING * (1 - p);
+    hugBtn.style.setProperty('--p', p.toFixed(3));
+  }
+  function hugText(n) {
+    if (n === 1) return `Abrazo entregado en ${city}. Lo he sentido desde aquí.`;
+    if (n === 2) return 'Otro más. Me estás malacostumbrando.';
+    if (n < 10) return `Llevo ${n} apuntados. Te los devuelvo todos en persona, con intereses.`;
+    return `${n} abrazos. A este paso vuelvo andando para devolvértelos.`;
+  }
+  if (hugs) hugMsg.textContent = hugText(hugs);
+  function holdFrame(now) {
+    if (!holding) return;
+    const p = Math.min(1, (now - holdT0) / HOLD);
+    setP(p);
+    if (p >= 1) {
+      holding = false;
+      hugBtn.classList.remove('is-holding');
+      sendHug();
+      return;
+    }
+    holdRaf = requestAnimationFrame(holdFrame);
+  }
+  function holdStart(e) {
+    if (sending || holding) return;
+    if (e.type === 'pointerdown') {
+      if (e.button > 0) return;
+      e.preventDefault();
+      try { hugBtn.setPointerCapture(e.pointerId); } catch (_) { /* sin captura */ }
+    }
+    holding = true;
+    holdT0 = performance.now();
+    ringFg.classList.remove('is-decay');
+    hugBtn.classList.add('is-holding');
+    vibrate(8);
+    holdRaf = requestAnimationFrame(holdFrame);
+  }
+  function holdEnd() {
+    if (!holding) return;
+    holding = false;
+    cancelAnimationFrame(holdRaf);
+    hugBtn.classList.remove('is-holding');
+    ringFg.classList.add('is-decay');
+    setP(0);
+    if (!hugs) hugMsg.textContent = 'Un poquito más. Mantén el dedo hasta que se llene el círculo.';
+  }
+  function sendHug() {
+    sending = true;
+    vibrate([25, 40, 25]);
+    fx.burst(...center(hugBtn), 14, { power: .7 });
+    const len = arc.getTotalLength(), dur = reduce ? 1 : 1500, t0 = performance.now();
+    const ease = t => (t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    traveler.setAttribute('opacity', '1');
+    (function fly(now) {
+      const k = Math.min(1, (now - t0) / dur);
+      const pt = arc.getPointAtLength(len * ease(k));
+      const s = 1 + Math.sin(k * Math.PI) * .45;
+      traveler.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)}) scale(${s.toFixed(2)})`);
+      if (k < 1) { requestAnimationFrame(fly); return; }
+      traveler.setAttribute('opacity', '0');
+      fx.burst(...center(pinCity), 16, { power: .6, size: .8 });
+      hugs++;
+      state.hugs = hugs;
+      save();
+      hugMsg.textContent = hugText(hugs);
+      ringFg.classList.add('is-decay');
+      setP(0);
+      sending = false;
+    })(t0);
+  }
+  hugBtn.addEventListener('pointerdown', holdStart);
+  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => hugBtn.addEventListener(ev, holdEnd));
+  hugBtn.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') holdEnd(); });
+  hugBtn.addEventListener('contextmenu', e => e.preventDefault());
+  hugBtn.addEventListener('keydown', e => {
+    if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); holdStart(e); }
+  });
+  hugBtn.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') holdEnd(); });
+
+  // ===== ¿Me perdonas? (el «No» se escapa) =====
+  const forgiveSec = $('#perdon'), answers = $('#answers'), yesBtn = $('#yesBtn'), noBtn = $('#noBtn');
+  const NO_TEXTS = ['No', '¿Seguro?', '¿Segurísima?', 'Piénsalo bien', 'Te invito a churros', 'Eliges tú la peli', 'Porfa', 'Venga, va'];
+  let noCount = 0, lastEvade = 0, forgiven = false;
+  function freeNo() {
+    if (noBtn.classList.contains('is-free')) return;
+    const s = forgiveSec.getBoundingClientRect(), b = noBtn.getBoundingClientRect();
+    const spacer = document.createElement('span');
+    spacer.className = 'btn btn-line spacer';
+    spacer.setAttribute('aria-hidden', 'true');
+    spacer.style.width = b.width + 'px';
+    spacer.textContent = noBtn.textContent;
+    noBtn.after(spacer);
+    noBtn.style.left = (b.left - s.left) + 'px';
+    noBtn.style.top = (b.top - s.top) + 'px';
+    noBtn.classList.add('is-free');
+    void noBtn.offsetWidth;
+  }
+  function moveNo() {
+    const s = forgiveSec.getBoundingClientRect(), b = noBtn.getBoundingClientRect(), y = yesBtn.getBoundingClientRect();
+    const t = $('#forgiveTitle').getBoundingClientRect();
+    const padX = 8, w = b.width, hh = b.height;
+    const minX = padX, maxX = Math.max(padX, s.width - w - padX);
+    const minY = t.bottom - s.top + 10, maxY = Math.max(minY, s.height - hh - 24);
+    const curX = b.left - s.left, curY = b.top - s.top;
+    let pos = null;
+    for (let i = 0; i < 40 && !pos; i++) {
+      const x = minX + Math.random() * (maxX - minX), yy = minY + Math.random() * (maxY - minY);
+      const L = s.left + x, T = s.top + yy;
+      const hitsYes = L < y.right + 16 && L + w > y.left - 16 && T < y.bottom + 16 && T + hh > y.top - 16;
+      if (!hitsYes && Math.hypot(x - curX, yy - curY) > 110) pos = [x, yy];
+    }
+    if (!pos) pos = [curX > s.width / 2 ? minX : maxX, maxY];
+    noBtn.style.left = pos[0].toFixed(0) + 'px';
+    noBtn.style.top = pos[1].toFixed(0) + 'px';
+  }
+  function evade(e) {
+    if (forgiven || noBtn.classList.contains('is-yes')) return;
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    const now = performance.now();
+    if (now - lastEvade < 350) return;
+    lastEvade = now;
+    freeNo();
+    noCount++;
+    if (noCount >= NO_TEXTS.length) {
+      noBtn.textContent = 'Vale, sí';
+      noBtn.classList.add('is-yes');
+    } else {
+      noBtn.textContent = NO_TEXTS[noCount];
+    }
+    yesBtn.style.setProperty('--grow', Math.min(1 + noCount * .09, 1.55).toFixed(2));
+    vibrate(6);
+    moveNo();
+  }
+  function forgive(btn) {
+    if (forgiven) return;
+    forgiven = true;
+    state.forgiven = true;
+    save();
+    fx.burst(...center(btn), 46, { power: 1.25 });
+    fx.rain(36);
+    vibrate([20, 50, 30]);
+    showForgiven();
+    unlockPlan(true);
+  }
+  function showForgiven() {
+    answers.hidden = true;
+    $('#forgiveMsg').textContent = 'Sabía que dirías que sí. Gracias por entenderlo todo siempre.';
+    $('#forgiveNext').hidden = false;
+  }
+  noBtn.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') evade(e); });
+  noBtn.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') evade(e); });
+  noBtn.addEventListener('click', e => {
+    if (performance.now() - lastEvade < 400) { e.preventDefault(); return; }
+    if (noBtn.classList.contains('is-yes')) forgive(noBtn); else evade(e);
+  });
+  yesBtn.addEventListener('click', () => forgive(yesBtn));
+
+  // ===== La cita perfecta (asistente) =====
+  const planSec = $('#plan'), wizard = $('#wizard'), stepEl = $('#step'), optionsEl = $('#options');
+  const nextBtn = $('#nextBtn'), backBtn = $('#backBtn'), boarding = $('#boarding');
+  const choices = state.choices || {};
+  let idx = 0;
+  const pick = (s, v) => (v === 'x' ? s.surprise : s.options[Number(v)]);
+
+  function unlockPlan(animate) {
+    if (!planSec.hidden) return;
+    planSec.hidden = false;
+    renderStep(false);
+    if (animate) {
+      planSec.classList.add('is-in');
+      later(1500, () => planSec.scrollIntoView({ behavior: smooth, block: 'start' }));
+    }
+  }
+  function optionEl(s, o, v, surprise) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'opt' + (surprise ? ' opt-surprise' : '');
+    b.setAttribute('role', 'radio');
+    b.dataset.v = v;
+    const on = choices[s.key] === v;
+    b.setAttribute('aria-checked', String(on));
+    b.tabIndex = on || (choices[s.key] == null && v === '0') ? 0 : -1;
+    b.innerHTML = '<span class="opt-body"><span class="opt-title"></span><span class="opt-desc"></span></span>' +
+      `<span class="opt-meta"><span class="opt-tag"></span><svg class="opt-check" viewBox="-1.15 -1.2 2.3 2.3" aria-hidden="true"><path d="${HEART}"/></svg></span>`;
+    b.querySelector('.opt-title').textContent = o.t;
+    b.querySelector('.opt-desc').textContent = o.d;
+    b.querySelector('.opt-tag').textContent = o.tag || '';
+    b.addEventListener('click', () => choose(v, b));
+    return b;
+  }
+  function renderStep(animate = true) {
+    const draw = () => {
+      const s = STEPS[idx];
+      $('#stepKicker').textContent = s.kicker;
+      $('#stepTitle').textContent = s.title;
+      $('#stepHint').textContent = s.hint;
+      optionsEl.replaceChildren(...s.options.map((o, i) => optionEl(s, o, String(i))), optionEl(s, s.surprise, 'x', true));
+      $$('#progress li').forEach((li, i) => { li.className = i < idx ? 'is-done' : i === idx ? 'is-current' : ''; });
+      backBtn.style.visibility = idx === 0 ? 'hidden' : 'visible';
+      nextBtn.textContent = idx === STEPS.length - 1 ? 'Ver mi tarjeta' : 'Siguiente';
+      nextBtn.disabled = choices[s.key] == null;
+    };
+    if (!animate || reduce) { draw(); return; }
+    stepEl.classList.add('is-out');
+    setTimeout(() => { draw(); stepEl.classList.remove('is-out'); }, 220);
+  }
+  function choose(v, b) {
+    const s = STEPS[idx];
+    choices[s.key] = v;
+    state.choices = choices;
+    save();
+    $$('.opt', optionsEl).forEach(o => {
+      const on = o.dataset.v === v;
+      o.setAttribute('aria-checked', String(on));
+      o.tabIndex = on ? 0 : -1;
+    });
+    nextBtn.disabled = false;
+    fx.burst(...center(b.querySelector('.opt-check')), 8, { power: .5, size: .7 });
+    vibrate(10);
+  }
+  function toWizardTop() {
+    if (wizard.getBoundingClientRect().top < 0) wizard.scrollIntoView({ behavior: smooth, block: 'start' });
+  }
+  optionsEl.addEventListener('keydown', e => {
+    const dir = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+    if (!dir) return;
+    e.preventDefault();
+    const opts = $$('.opt', optionsEl);
+    const next = opts[(opts.indexOf(document.activeElement) + dir + opts.length) % opts.length];
+    next.focus();
+    next.click();
+  });
+  nextBtn.addEventListener('click', () => {
+    if (idx < STEPS.length - 1) { idx++; renderStep(); toWizardTop(); } else showTicket(true);
+  });
+  backBtn.addEventListener('click', () => {
+    if (idx > 0) { idx--; renderStep(); toWizardTop(); }
+  });
+
+  // ===== Tarjeta de embarque =====
+  const planLines = () => STEPS.map(s => ({ s, o: pick(s, choices[s.key]) }));
+  function planText() {
+    const lines = planLines().map(({ s, o }) => `${s.emoji} ${s.label}: ${o.t}`);
+    return `Ya he elegido nuestra cita perfecta:\n\n${lines.join('\n')}\n\nVuelve pronto. Te quiero ♥`;
+  }
+  function showTicket(animate) {
+    if (STEPS.some(s => choices[s.key] == null)) return;
+    $('#tPlan').replaceChildren(...planLines().map(({ s, o }) => {
+      const row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = s.label;
+      dd.textContent = o.t;
+      row.append(dt, dd);
+      return row;
+    }));
+    const text = planText();
+    $('#waBtn').href = `https://wa.me/${CONFIG.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`;
+    $('#copyFallback').textContent = text;
+    wizard.hidden = true;
+    boarding.hidden = false;
+    state.done = true;
+    save();
+    unlockFinal(animate);
+    if (animate) {
+      boarding.classList.remove('is-in');
+      void boarding.offsetWidth;
+      boarding.classList.add('is-in');
+      boarding.scrollIntoView({ behavior: smooth, block: 'start' });
+      later(450, () => {
+        const r = $('#ticket').getBoundingClientRect();
+        fx.burst(r.left + r.width / 2, Math.max(80, r.top + 90), 40, { power: 1.1 });
+      });
+      vibrate([15, 40, 15]);
+    }
+  }
+  $('#editBtn').addEventListener('click', () => {
+    boarding.hidden = true;
+    wizard.hidden = false;
+    idx = 0;
+    renderStep(false);
+    wizard.scrollIntoView({ behavior: smooth, block: 'start' });
+  });
+  $('#copyBtn').addEventListener('click', async () => {
+    const btn = $('#copyBtn');
+    try {
+      await navigator.clipboard.writeText(planText());
+      btn.textContent = 'Copiado';
+    } catch (_) {
+      const fb = $('#copyFallback');
+      fb.hidden = false;
+      const range = document.createRange();
+      range.selectNodeContents(fb);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      btn.textContent = 'Cópialo de aquí abajo';
+    }
+    setTimeout(() => { btn.textContent = 'Copiar el plan'; }, 2600);
+  });
+
+  // ===== Final =====
+  const KISSES = ['Te quiero', 'Te quiero mucho', 'Te quiero muchísimo', 'Más que a nada', 'Infinito'];
+  let kisses = 0;
+  function unlockFinal(animate) {
+    const f = $('#final');
+    if (!f.hidden) return;
+    f.hidden = false;
+    if (animate) f.classList.add('is-in');
+  }
+  $('#kissBtn').addEventListener('click', e => {
+    const b = e.currentTarget;
+    kisses++;
+    $('#kissMsg').textContent = kisses <= KISSES.length ? KISSES[kisses - 1] : `Infinito + ${kisses - KISSES.length}`;
+    $('#kissHint').hidden = true;
+    b.classList.remove('is-pop');
+    void b.offsetWidth;
+    b.classList.add('is-pop');
+    fx.burst(...center(b), 20 + Math.min(kisses, 10) * 2, { power: .9 + Math.min(kisses, 8) * .05 });
+    if (kisses === KISSES.length) fx.rain(70);
+    vibrate(12);
+  });
+
+  // ===== Restaurar lo que ya hizo =====
+  if (state.forgiven || hash === 'todo') {
+    forgiven = true;
+    showForgiven();
+    unlockPlan(false);
+  }
+  if (state.done) showTicket(false);
+  if (hash === 'todo') unlockFinal(false);
+})();
+</script>
+</body>
+</html>
